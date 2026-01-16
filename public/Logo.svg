@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="qgrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Thicker Q ring -->
+  <circle
+    cx="22"
+    cy="22"
+    r="13.5"
+    fill="none"
+    stroke="url(#qgrad)"
+    stroke-width="6.5"
+  />
+
+  <!-- Thicker Q tail -->
+  <line
+    x1="30"
+    y1="30"
+    x2="40"
+    y2="40"
+    stroke="url(#qgrad)"
+    stroke-width="6.5"
+    stroke-linecap="round"
+  />
+</svg>
