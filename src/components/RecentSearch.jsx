@@ -45,7 +45,7 @@ const RecentSearch = ({
           </h1>
         </div>
         <div className="overflow-auto h-[85vh] no-scrollbar">
-          <ul className="text-left overflow-scroll text-sm ">
+          <ul className="text-left overflow-hidden text-sm ">
             {recentHistory &&
               recentHistory.map((item, index) => (
                 <li
