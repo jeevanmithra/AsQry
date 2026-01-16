@@ -133,7 +133,7 @@ const Layout = () => {
               </select>
             </div>
           </div>
-          <div className="container h-150 overflow-scroll no-scrollbar w-3/4 flex m-auto flex-col  ">
+          <div className="container h-3/4 overflow-scroll no-scrollbar w-3/4 flex m-auto flex-col  ">
             {loader ? (
               <div className="flex justify-center items-center p-5">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-4  border-zinc-700 dark:border-zinc-300"></div>

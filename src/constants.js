@@ -1,1 +1,1 @@
-export const URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyAAfX6PemOn5MZ9Y0c8dveLsVD7yTT_vhk"
+export const URL = "/.netlify/functions/ask"
