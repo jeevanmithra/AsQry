@@ -5,6 +5,8 @@ import RecentSearch from "./RecentSearch";
 import QuestionandAnswer from "./QuestionandAnswer";
 import Input from "./Input";
 import Logo from "./Logo";
+import ThemeDropDown from "./ThemeDropDown";
+
 
 const Layout = () => {
   const [question, setQuestion] = useState("");
@@ -118,22 +120,19 @@ const Layout = () => {
 
         <div className="col-span-4 pt-5 ">
           <div className="border-b dark:border-zinc-700 border-zinc-300 pb-5 flex justify-between items-center px-10 relative">
-            <div className=" top-8 left-8 dark:text-white text-zinc-700 text-2xl"><Logo /></div>
+            <div className=" top-8 left-8 dark:text-white text-zinc-700 text-2xl">
+              <Logo />
+            </div>
             <div>
               <h1 className="text-4xl mb-3 bg-clip-text dark:text-zinc-100 text-zinc-700 ">
                 Hello User, Ask me anything!
               </h1>
             </div>
             <div className="">
-              <select
-                onChange={(e) => setTheme(e.target.value)}
-                className=" dark:text-white text-zinc-800 bg-transparent outline-none">
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-              </select>
+              <ThemeDropDown theme={theme} setTheme={setTheme} />
             </div>
           </div>
-          <div className="container h-3/4 overflow-scroll no-scrollbar w-3/4 flex m-auto flex-col  ">
+          <div className="container h-[75vh] overflow-scroll no-scrollbar w-3/4 flex m-auto flex-col  ">
             {loader ? (
               <div className="flex justify-center items-center p-5">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-4  border-zinc-700 dark:border-zinc-300"></div>

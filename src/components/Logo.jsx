@@ -12,8 +12,8 @@ const Logo = () => {
 >
   <defs>
     <linearGradient id="qGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+      <stop offset="0%" stopColor="#6366F1"/>
+      <stop offset="100%" stopColor="#22D3EE"/>
     </linearGradient>
   </defs>
 
@@ -21,10 +21,10 @@ const Logo = () => {
   <text
     x="0"
     y="35"
-    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-    font-size="38"
-    font-weight="500"
-    letter-spacing="-1"
+    fontFamily="Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontSize="38"
+    fontWeight="500"
+    letterSpacing="-1"
     fill="currentColor"
   >
     As
@@ -37,13 +37,13 @@ const Logo = () => {
       cy="16"
       r="14"
       stroke="url(#qGradient)"
-      stroke-width="6.0"
+      strokeWidth="6.0"
     />
     <path
       d="M22 22 L32 30"
       stroke="url(#qGradient)"
-      stroke-width="6.0"
-      stroke-linecap="round"
+      strokeWidth="6.0"
+      strokeLinecap="round"
     />
   </g>
 
@@ -51,10 +51,10 @@ const Logo = () => {
   <text
     x="81"
     y="35"
-    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-    font-size="38"
-    font-weight="500"
-    letter-spacing="-1"
+    fontFamily="Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontSize="38"
+    fontWeight="500"
+    letterSpacing="-1"
     fill="currentColor"
   >
     ry
