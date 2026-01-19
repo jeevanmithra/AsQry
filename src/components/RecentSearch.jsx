@@ -18,10 +18,10 @@ const RecentSearch = ({
       setRecentHistory([]);
     }
   };
-  const mouseLeave = () => {
-    setTimeout(() => {
+  const mouseLeave = (e) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
       setShowDelete(null);
-    }, 1000);
+    }
   };
   return (
     <>
@@ -54,44 +54,47 @@ const RecentSearch = ({
                     if (showDelete !== index) {
                       setSelectedHistory(item);
                     }
-                  }}>
-                  <div
-                    className="flex justify-between items-center"
-                    onMouseLeave={() => mouseLeave()}>
+                  }}
+                  onMouseLeave={mouseLeave}>
+                  <div className="flex justify-between items-center">
                     <span className="truncate">{item}</span>
-                    <button
-                      className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-zinc-300 dark:hover:bg-zinc-500 relative"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setShowDelete((prev) => prev === index ? null : index);
-                      }}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <circle cx="12" cy="6" r="2" />
-                        <circle cx="12" cy="12" r="2" />
-                        <circle cx="12" cy="18" r="2" />
-                      </svg>
-                      {showDelete === index && (
-                        <div
-                          className={`absolute right-0 ${
-                            index === 0 ? "top-full mt-1" : "bottom-full mb-1"
-                          } bg-white dark:bg-zinc-800 border dark:border-zinc-600 rounded-2xl shadow-lg z-20 min-w-24`}>
-                          <button
-                            className="block w-full text-left px-3 py-2 text-sm dark:text-zinc-200 text-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              deleteHistoryItem(item);
-                              setShowDelete(null);
-                            }}>
-                            Delete
-                          </button>
-                        </div>
-                      )}
-                    </button>
+                    <div className="relative">
+                      <button
+                        className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-zinc-300 dark:hover:bg-zinc-500 relative"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowDelete((prev) =>
+                            prev === index ? null : index,
+                          );
+                        }}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <circle cx="12" cy="6" r="2" />
+                          <circle cx="12" cy="12" r="2" />
+                          <circle cx="12" cy="18" r="2" />
+                        </svg>
+                        {showDelete === index && (
+                          <div
+                            className={`absolute right-0 ${
+                              index === 0 ? "top-full mt-1" : "bottom-full mb-1"
+                            } bg-white dark:bg-zinc-800 border dark:border-zinc-600 rounded-2xl shadow-lg z-20 min-w-24`}>
+                            <button
+                              className="block w-full text-left px-3 py-2 text-sm dark:text-zinc-200 text-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-700 rounded-2xl"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                deleteHistoryItem(item);
+                                setShowDelete(null);
+                              }}>
+                              Delete
+                            </button>
+                          </div>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 </li>
               ))}
