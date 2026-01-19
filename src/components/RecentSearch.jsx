@@ -10,7 +10,7 @@ const RecentSearch = ({
 
   const clearHistory = () => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete all recent history? This action cannot be undone."
+      "Are you sure you want to delete all recent history? This action cannot be undone.",
     );
 
     if (confirmDelete) {
@@ -18,12 +18,11 @@ const RecentSearch = ({
       setRecentHistory([]);
     }
   };
-  const mouseLeave=()=>{
-   setTimeout(() => {
-    setShowDelete(null);
-  }, 1000);
-    
-  }
+  const mouseLeave = () => {
+    setTimeout(() => {
+      setShowDelete(null);
+    }, 1000);
+  };
   return (
     <>
       <div className="col-span-1 dark:bg-zinc-900 bg-gray-50 border-r dark:border-zinc-700 border-gray-200 h-screen p-5 flex flex-col justify-between">
@@ -58,11 +57,8 @@ const RecentSearch = ({
                   }}>
                   <div
                     className="flex justify-between items-center"
-                    onMouseLeave={() => mouseLeave()}
-                    >
-                    <span className="truncate">
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </span>
+                    onMouseLeave={() => mouseLeave()}>
+                    <span className="truncate">{item}</span>
                     <button
                       className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-zinc-300 dark:hover:bg-zinc-500 relative"
                       onClick={(e) => {
