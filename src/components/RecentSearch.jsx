@@ -20,7 +20,7 @@ const RecentSearch = ({
   };
   const mouseLeave = () => {
     setTimeout(() => {
-      setShowDelete(null);
+      
     }, 1000);
   };
   return (
@@ -57,13 +57,13 @@ const RecentSearch = ({
                   }}>
                   <div
                     className="flex justify-between items-center"
-                    onMouseLeave={() => mouseLeave()}>
+                    onMouseLeave={() => setShowDelete(null)}>
                     <span className="truncate">{item}</span>
                     <button
                       className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-zinc-300 dark:hover:bg-zinc-500 relative"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setShowDelete(showDelete === index ? null : index);
+                        setShowDelete((prev) => prev === index ? null : index);
                       }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
