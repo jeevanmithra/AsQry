@@ -1,39 +1,22 @@
-import React from 'react'
-import { Select, MenuItem } from "@mui/material";
+import React from "react";
+import { IconButton } from "@mui/material";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 
 const ThemeDropDown = ({ theme, setTheme }) => {
-  return (
-    <Select
-                value={theme}
-                onChange={(e) => setTheme(e.target.value)}
-                sx={{
-                  color: `${theme === "dark" ? "white" : "black"}`,
-                  background: "transparent",
-                  border: "none",
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    border: "none",
-                  },
-                  "& .MuiSvgIcon-root": {
-                    color: "white",
-                  },
-                  "& .MuiSelect-icon": {
-                    color: `${theme === "dark" ? "white" : "black"}`,
-                  },
-                }}
-                MenuProps={{
-                  PaperProps: {
-                    sx: {
-                      bgcolor: `${theme === "dark" ? "#18181b" : "white"}`,
-                      color: `${theme === "dark" ? "white" : "black"}`,
-                      borderRadius: "8px",
-                      mt: 1,
-                    },
-                  },
-                }}>
-                <MenuItem value="dark">Dark</MenuItem>
-                <MenuItem value="light">Light</MenuItem>
-              </Select>
-  )
-}
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
-export default ThemeDropDown
+  return (
+    <IconButton
+      onClick={toggleTheme}
+      sx={{
+        color: theme === "dark" ? "white" : "black",
+      }}>
+      {theme === "dark" ? <LightModeIcon /> : <DarkModeRoundedIcon />}
+    </IconButton>
+  );
+};
+
+export default ThemeDropDown;
